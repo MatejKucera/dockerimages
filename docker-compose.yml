@@ -23,5 +23,5 @@ services:
   php-debug:
     build:
       context: .
-      dockerfile: php/Dockerfile
+      dockerfile: php-debug/Dockerfile
       target: php-debug

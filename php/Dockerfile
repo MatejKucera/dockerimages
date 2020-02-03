@@ -10,7 +10,12 @@ RUN apt-get update -yqq && \
 RUN docker-php-ext-install pdo_mysql bcmath zip pcntl mbstring json && \
     docker-php-ext-configure zip --with-libzip
 
+RUN curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/bin/composer && \
+    composer global require hirak/prestissimo --no-plugins --no-scripts
+
 COPY shared/wait-for-it.sh /wait-for-it.sh
+COPY php/entrypoint.sh /entrypoint.sh
 
 WORKDIR /app
 
