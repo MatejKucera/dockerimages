@@ -15,6 +15,8 @@ RUN curl -sS https://getcomposer.org/installer | php && \
     composer global require hirak/prestissimo --no-plugins --no-scripts
 
 COPY shared/wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for.it.sh
+
 COPY php/entrypoint.sh /entrypoint.sh
 
 WORKDIR /app

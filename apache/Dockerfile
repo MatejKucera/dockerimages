@@ -19,6 +19,7 @@ RUN a2enmod rewrite && \
 
 COPY apache/apache.conf /etc/apache2/sites-enabled/000-default.conf
 COPY shared/wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for.it.sh
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
